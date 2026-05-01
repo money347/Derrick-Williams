@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naija Daily Quotes - Motivation & Wisdom</title>
+    <meta name="description" content="Get fresh Naija motivational quotes daily. Random backgrounds, pure inspiration.">
+    
+    <!-- REPLACE ca-pub-YOUR_ID WITH YOUR REAL ADSENSE ID -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6465229760971363" crossorigin="anonymous"></script>
+    
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        color: white;
+        min-height: 100vh;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        /* SMOOTH BACKGROUND TRANSITION */
+        transition: background-image 1.5s ease-in-out;
+    }
+    .overlay {
+        background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.4));
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+    }
+    nav { text-align: center; padding: 15px; }
+    nav a { color: #00ff88; margin: 0 12px; text-decoration: none; font-weight: 500; }
+    .main {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    .quote-box {
+        background: rgba(255,255,255,0.1);
+        backdrop-filter: blur(10px);
+        padding: 40px 30px;
+        border-radius: 20px;
+        border: 1px solid rgba(255,255,255,0.2);
+        margin: 20px 0;
+        /* SMOOTH QUOTE FADE */
+        transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+    }
+    #quote { 
+        font-size: 1.8rem; 
+        line-height: 1.4; 
+        margin-bottom: 15px; 
+        font-weight: 300;
+        transition: opacity 0.6s ease-in-out;
+    }
+    #author { 
+        font-size: 1.1rem; 
+        color: #00ff88; 
+        font-style: italic;
+        transition: opacity 0.6s ease-in-out;
+    }
+    .btn {
+        background: #00ff88;
+        color: #000;
+        padding: 15px 35px;
+        border: none;
+        border-radius: 50px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        margin: 15px 10px;
+        transition: transform 0.2s;
+    }
+    .btn:active { transform: scale(0.95); }
+    .ad-box {
+        margin: 25px auto;
+        max-width: 728px;
+        width: 100%;
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+    footer { text-align: center; padding: 20px; font-size: 0.9rem; opacity: 0.8; }
+    
+    /* FADE ANIMATION CLASS */
+    .fade-out {
+        opacity: 0 !important;
+        transform: translateY(10px);
+    }
+</style>
+</head>
+<body>
+    <div class="overlay">
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about.html">About</a>
+            <a href="/privacy.html">Privacy</a>
+            <a href="/contact.html">Contact</a>
+        </nav>
+
+        <div class="main">
+            <h1 style="font-size: 2.5rem; margin-bottom: 10px;">Naija Daily Quotes 🇳🇬</h1>
+            <p style="opacity: 0.9; margin-bottom: 20px;">Refresh your mind, refresh the page BY DERRICK WILLIAMS</p>
+            
+            <div class="quote-box">
+                <div id="quote">Loading wisdom...</div>
+                <div id="author"></div>
+            </div>
+
+            <!-- AdSense Ad Unit - Replace data-ad-slot -->
+            <div class="ad-box">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-YOUR_ID"
+                     data-ad-slot="1234567890"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+
+            <div>
+                <button class="btn" onclick="newQuote()">New Quote</button>
+                <button class="btn" onclick="shareQuote()" style="background: white;">Share</button>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 Naija Daily Quotes. Built with Spck Editor.</p>
+        </footer>
+    </div>
+
+    <script>
+        const quotes = [
+            {q: "Hustle go pay, but no forget to rest. Even generator need break.", a: "Lagos Proverb"},
+            {q: "If plan A no work, remember say alphabet get 25 more letters.", a: "Nigerian Wisdom"},
+            {q: "No let wetin you dey chop make you forget where you dey go.", a: "Mama Nkechi"},
+            {q: "Data is expensive, but ignorance cost pass.", a: "Tech Bro"},
+            {q: "When life give you lemon, add sugar and sell Zobo.", a: "Street Economist"},
+            {q: "Success na like NEPA light - e go come, just no know when.", a: "Patient Hustler"},
+            {q: "You no fit pour from empty cup. Charge your power bank first.", a: "Self-Care Guru"},
+            {q: "Small small na im monkey dey chop banana. Consistency win.", a: "Old School"},
+            {q: "Problem no dey finish, but enjoyment must dey.", a: "Weekend Philosopher"},
+            {q: "Your village people no dey sleep, but God no dey sleep too.", a: "Faith Keepers"},   {q: "No matter how long the night, the day is sure to come.", a: "Nigerian Proverb"},
+   {q: "When the music changes, so does the dance.", a: "African Wisdom"},
+   {q: "A child who washes his hands clean dines with elders.", a: "Yoruba Proverb"},
+   {q: "The lizard that jumped from the high iroko tree said he would praise himself if no one else did.", a: "Igbo Proverb"},
+   {q: "However far the stream flows, it never forgets its source.", a: "Nigerian Proverb"},
+   {q: "If you think you are too small to make a difference, try sleeping with a mosquito.", a: "African Proverb"},
+   {q: "A roaring lion kills no game.", a: "Nigerian Wisdom"},
+   {q: "The sun will shine on those who stand before it shines on those who kneel under them.", a: "African Proverb"},
+   {q: "When a handshake passes the elbow, it becomes another thing.", a: "Nigerian Proverb"},
+   {q: "A single bracelet does not jingle.", a: "African Wisdom"},
+   {q: "The earth is not thirsty for the blood of a warrior who runs away in battle.", a: "Nigerian Proverb"},
+   {q: "Until the lion learns to write, every story will glorify the hunter.", a: "African Proverb"},
+   {q: "If you don't stand for something, you will fall for anything.", a: "Nigerian Wisdom"},
+   {q: "Smooth seas do not make skillful sailors.", a: "African Proverb"},
+   {q: "He who fetches ant-infested firewood invites lizards to his house.", a: "Yoruba Proverb"},
+   {q: "A bird that flies off the earth and lands on an anthill is still on the ground.", a: "Igbo Proverb"},
+   {q: "The axe forgets, but the tree remembers.", a: "African Proverb"},
+   {q: "When brothers fight to death, a stranger inherits their property.", a: "Nigerian Wisdom"},
+   {q: "You must act as if it is impossible to fail.", a: "African Proverb"},
+   {q: "The best time to plant a tree was 20 years ago. The second best time is now.", a: "Nigerian Proverb"},
+   {q: "No be who first call police dey win case. Na who get evidence.", a: "Street Lawyer"},
+   {q: "If you no add value, you go be like salt wey don loss taste.", a: "Market Woman"},
+   {q: "Person wey dey find trouble dey always meet am for junction.", a: "Elders Council"},
+   {q: "Empty pocket no dey stop person wey get big dream.", a: "Ghetto Philosopher"},
+   {q: "Life na turn by turn. Today na my turn to chop breakfast.", a: "Optimistic Uncle"},
+   {q: "No be every closed door be rejection. Some na protection.", a: "Spiritual Baddie"},
+   {q: "If shame dey catch you to sell, hunger no go shame to catch you.", a: "Business Coach"},
+   {q: "Your network na your net worth. Connect before you collect.", a: "LinkedIn Guru"},
+   {q: "Wetin goat like na wetin go kill am. Control your cravings.", a: "Discipline Master"},
+   {q: "Na who give up lose. If you still dey try, you never fail.", a: "Never Give Up Gang"}
+            
+        ];
+
+        const backgrounds = [
+'https://images.unsplash.com/photo-1518546305927-5a555bb7020d?w=1920',
+'https://images.unsplash.com/photo-1485872299829-c673f5194813?w=1920',
+'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920',
+'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1920',
+'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1920'
+];
+
+// PRELOAD IMAGES FOR SMOOTH TRANSITION
+backgrounds.forEach(url => {
+const img = new Image();
+img.src = url;
+});
+
+let currentIndex = 0;
+const quoteBox = document.querySelector('.quote-box');
+const quoteEl = document.getElementById('quote');
+const authorEl = document.getElementById('author');
+
+function changeContent() {
+// 1. Fade out smoothly
+quoteBox.classList.add('fade-out');
+
+setTimeout(() => {
+// 2. Change content while invisible
+currentIndex = (currentIndex + 1) % quotes.length;
+quoteEl.textContent = `"${quotes[currentIndex].q}"`;
+authorEl.textContent = `— ${quotes[currentIndex].a}`;
+
+// 3. Change background
+let bgIndex = currentIndex % backgrounds.length;
+document.body.style.backgroundImage = `url(${backgrounds[bgIndex]})`;
+
+// 4. Fade in smoothly
+quoteBox.classList.remove('fade-out');
+}, 800); // Wait for fade out to complete
+}
+
+function newQuote() {
+changeContent();
+}
+
+function shareQuote() {
+const text = document.getElementById('quote').textContent;
+if (navigator.share) {
+navigator.share({title: 'Naija Quote', text: text});
+} else {
+navigator.clipboard.writeText(text);
+alert('Quote copied! Paste am for WhatsApp 😂');
+}
+}
+
+// Load first quote
+quoteEl.textContent = `"${quotes[0].q}"`;
+authorEl.textContent = `— ${quotes[0].a}`;
+document.body.style.backgroundImage = `url(${backgrounds[0]})`;
+
+// AUTO CHANGE EVERY 6 SECONDS
+setInterval(changeContent, 6000);
+</script>
+</body>
+</html>
